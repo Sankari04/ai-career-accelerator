@@ -1,0 +1,8 @@
+streamlit
+google-generativeai
+PyPDF2
+pandas
+python-dotenv
+fpdf
+python-docx
+streamlit-option-menu
