@@ -35,6 +35,13 @@ def _build_pdf(content: str) -> bytes:
             continue
         # Strip markdown bold markers
         line = line.replace("**", "")
+        
+        # Replace common smart quotes and dashes to avoid ? in pdf
+        line = (line.replace("\u2018", "'").replace("\u2019", "'")
+                    .replace("\u201c", '"').replace("\u201d", '"')
+                    .replace("\u2013", "-").replace("\u2014", "-")
+                    .replace("\u2022", "-").replace("\u2026", "..."))
+                    
         # Encode to latin-1 safely
         line = line.encode("latin-1", "replace").decode("latin-1")
 
@@ -52,7 +59,7 @@ def _build_pdf(content: str) -> bytes:
             pdf.cell(0, 6, line[4:].strip(), ln=1)
             pdf.set_font("Arial", size=10)
         elif line.startswith("- ") or line.startswith("* "):
-            pdf.multi_cell(0, 5, f"  \u2022 {line[2:].strip()}")
+            pdf.multi_cell(0, 5, f"  - {line[2:].strip()}")
         else:
             pdf.multi_cell(0, 5, line)
 
