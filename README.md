@@ -19,7 +19,7 @@ All generated content persists across navigation — no re-generating when switc
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-career-accelerator.git
+git clone https://github.com/Sankari04/ai-career-accelerator.git
 cd ai-career-accelerator
 ```
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ### 3. Configure your API key
 ```bash
-cp .env.example .env
+cp .env1 .env
 # Open .env and paste your Gemini API key
 ```
 Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey).
@@ -42,7 +42,7 @@ streamlit run app.py
 
 ## ⚠️ Security Note
 Never commit your `.env` file. It is listed in `.gitignore`.
-Always use `.env.example` as the template for collaborators.
+Always use `.env1` as the template for collaborators.
 
 ## Tech Stack
 - [Streamlit](https://streamlit.io/)
